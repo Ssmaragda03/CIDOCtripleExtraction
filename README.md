@@ -22,9 +22,6 @@ This is a **Java web application** based on:
 The backend logic is implemented using **Java Servlets**.  
 Servlets are responsible for handling requests from the frontend, processing entity and relation extraction workflows, and returning the corresponding results.
 
-The project includes servlet-based functionality for:
-
-The backend of the application is implemented using Java Servlets.  
 The following servlets are used in the project:
 
 - `ChatGPTAPI.java`
