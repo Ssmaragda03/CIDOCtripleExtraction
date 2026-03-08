@@ -1,0 +1,137 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package RelationExtraction;
+
+import com.google.genai.Client;
+import com.google.genai.types.GenerateContentResponse;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.codehaus.jettison.json.JSONArray;
+import org.codehaus.jettison.json.JSONObject;
+
+/**
+ *
+ * @author micha
+ */
+public class LLMs {
+    
+    public String deepseek(String text, String model) throws Exception {
+        String url2 = "https://api.deepseek.com/chat/completions";
+        HttpURLConnection con = (HttpURLConnection) new URL(url2).openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+
+        String fkey = "sk-51790517195e466e977b186229d6db38";
+
+        con.setRequestProperty("Authorization", "Bearer " + fkey);
+
+        JSONObject data = new JSONObject();
+        data.put("model", "deepseek-chat");
+        data.put("messages", "[{'role': 'user', 'content': 'MyText'}]");
+
+        String body = data.toString().replace("\"[", "[").replace("]\"", "]").replace("'", "\"").replace("MyText", text);
+        System.out.println("query=" + body);
+        con.setDoOutput(true);
+        con.getOutputStream().write(body.toString().getBytes());
+
+        int responseCode = con.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+
+            String output = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
+                    .reduce((a, b) -> a + b).get();
+
+            return new JSONObject(output).getJSONArray("choices").getJSONObject(0).getJSONObject("message").getString("content").replace("```", "").replace("sparql", "");
+        } else {
+
+            System.out.println("Error: " + responseCode);
+            InputStream errorStream = con.getErrorStream();
+            if (errorStream != null) {
+                String errorOutput = new BufferedReader(new InputStreamReader(errorStream)).lines()
+                        .reduce((a, b) -> a + b).orElse("");
+                System.out.println("Error details: " + errorOutput);
+                return "Failed: " + new JSONObject(errorOutput).getJSONObject("error").getString("message");
+            }
+        }
+        return "Failed to fetch an answer from Chat-GPT";
+    }
+
+    private String url = "https://api.openai.com/v1/chat/completions";
+    String key_35 = "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";
+    String keymini = "sk-9uDH7tWGBYoJ1RiNANWLGEqDSkVnBSAncNTMqRIYvBT3BlbkFJtUMDmtWNwht62u0JDYtnL_ImXXMe-JMQoJ-2448FEA";
+    String key4 = "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";
+
+    /**
+     * Calls gpt turbo version without caring about conversation history
+     */
+    public String chatGPT_TURBO(String text, String model) throws Exception {
+
+        HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+        String fkey = key_35;
+        if (model.contains("mini")) {
+            fkey = keymini;
+        } else if (model.contains("4")) {
+            fkey = key4;
+        }
+
+        //System.out.println(fkey);
+        con.setRequestProperty("Authorization", "Bearer " + fkey);
+
+        JSONObject data = new JSONObject();
+        data.put("model", model); //"gpt-4o-2024-08-06");
+
+        JSONArray messages = new JSONArray();
+        JSONObject msg = new JSONObject();
+        msg.put("role", "user");
+        msg.put("content", "MyText");
+        messages.put(msg);
+        data.put("messages", messages);
+        data.put("temperature", 0.5);
+        data.put("max_completion_tokens", 2000);
+
+        String body = data.toString().replace("\"[", "[").replace("]\"", "]").replace("'", "\"").replace("MyText", text);
+        con.setDoOutput(true);
+        con.getOutputStream().write(body.toString().getBytes());
+
+        int responseCode = con.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+
+            String output = new BufferedReader(new InputStreamReader(con.getInputStream())).lines()
+                    .reduce((a, b) -> a + b).get();
+
+            return new JSONObject(output).getJSONArray("choices").getJSONObject(0).getJSONObject("message").getString("content").replace("```", "").replace("sparql", "");
+        } else {
+
+            System.out.println("Error: " + responseCode);
+            InputStream errorStream = con.getErrorStream();
+            if (errorStream != null) {
+                String errorOutput = new BufferedReader(new InputStreamReader(errorStream)).lines()
+                        .reduce((a, b) -> a + b).orElse("");
+                System.out.println("Error details: " + errorOutput);
+                return "Failed: " + new JSONObject(errorOutput).getJSONObject("error").getString("message");
+            }
+        }
+        return "Failed to fetch an answer from Chat-GPT";
+    }
+
+    public String runGemini(String currentPrompt) {
+        String key = "AIzaSyDc1ufAiQDHhoQkUQhDOUsCDfry00WoCYA";
+        Client client = Client.builder().apiKey(key).build();
+
+        GenerateContentResponse response
+                = client.models.generateContent(
+                        "gemini-2.5-flash",
+                        currentPrompt,
+                        null);
+        System.out.println(response.text());
+        return response.text();
+    }
+
+}
