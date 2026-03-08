@@ -1,0 +1,19 @@
+For the text: {Text}
+These are the entities their class and label:
+{Output 1st step}
+
+Please by using CIDOC-CRM properties, produce all the  relationships (including inferred ones) and then the triples of the text in .nt triples format by using the same URIs for the entities (no need to produce the rdftype and rdfslabel again). I strictly want only the triples in .nt format.
+
+Example
+For the text
+On July 21, 1928, Konstantinos Karyotakis committed suicide in Vathi, Preveza, using a revolver and leaving behind a letter. The weapon and the letter are today in the Benaki Museum, with the unique identifiers 10 and 9 respectively.
+
+These are the entities their class and label:
+<http://www.ics.forth.gr/resource/KonstantinosKaryotakis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+<http://www.ics.forth.gr/resource/KonstantinosKaryotakis> <http://www.w3.org/2000/01/rdf-schema#label> "Konstantinos Karyotakis - Person" .
+<http://www.ics.forth.gr/resource/TimeSpan_1928-07-21> 
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+<http://www.ics.forth.gr/resource/TimeSpan_1928-07-21> <http://www.w3.org/2000/01/rdf-schema#label> "July 21, 1928 - Date of suicide event" .
+
+Please by using CIDOC-CRM properties, produce all the  relationships (including inferred ones) and then the triples of the text in .nt triples format by using the same URIs for the entities (no need to produce the rdf:type and rdfs:label again). I strictly want only the triples in .nt format.
+

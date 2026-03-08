@@ -1,0 +1,5 @@
+For the text: {Text}
+These are the entities their class and label:
+{Output 1st step}
+
+Please by using CIDOC-CRM properties, produce all the  relationships (including inferred ones) and then the triples of the text in .nt triples format by using the same URIs for the entities (no need to produce the rdf:type and rdfs:label again). I strictly want only the triples in .nt format.

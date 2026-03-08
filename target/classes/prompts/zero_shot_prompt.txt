@@ -1,0 +1,11 @@
+You are given this text
+{TEXT}
+
+please find all the entities for the given text using the CIDOC-CRM classes. 
+Please be as precise as you can by extracting as much entities as you can by also including the inferred entities,
+there is no need to include the superclasses for each entity. 
+So, first perform Entity Recognition and then produce strictly only a JSON text 
+including for each entity the following in its json entry
+label (give a detailed label), substring (string), CIDOC-CRM class (just CIDOC-CRM class) 
+and a URI (of the format http://www.ics.forth.gr/isl/{entityName}) }.
+If an entity is inferred and cannot be mapped to the text, put no value on substring. 
