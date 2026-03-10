@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="CIDOC CRM Hierarchical">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n3b5d58ec" value="KonstantinosKaryotakis
+(crm:E21_Person)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1065" y="174" width="154" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n8909816b" value="Konstantinos Karyotakis" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="1084" y="284" width="161" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n6e2da5a1" value="SuicideOfKonstantinosKaryotakis
+(crm:E69_Death)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="1848" y="77" width="217" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2c3b1bf5" value="Suicide of Konstantinos Karyotakis" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="453" y="154" width="238" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ne05354d6" value="VathiPreveza
+(crm:E53_Place)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="57" y="167" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ne85bd884" value="Vathi, Preveza" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="842" y="241" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n0cc0affa" value="DateOfDeathOfKonstantinosKaryotakis
+(crm:E50_Date)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="252" y="183" width="245" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n113566ec" value="Date of death of Konstantinos Karyotakis" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="50" y="250" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n8fd29f44" value="RevolverUsedByKonstantinosKaryotakis
+(crm:E22_Man-Made_Object)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="863" y="177" width="252" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="nf1e2f2a4" value="Revolver used by Konstantinos Karyotakis" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="1288" y="259" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="nb4ffcef5" value="SuicideNoteOfKonstantinosKaryotakis
+(crm:E73_Information_Object)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="672" y="46" width="245" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n9369470b" value="Suicide note of Konstantinos Karyotakis" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="1681" y="70" width="273" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="ne3395ca4" value="BenakiMuseum
+(crm:E78_Curated_Holding)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="83" y="72" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="nc1411b63" value="Benaki Museum" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="242" y="66" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n74ed1a43" value="UniqueIdentifierOfRevolverInBenakiMuseum
+(crm:E42_Identifier)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="253" y="249" width="280" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n0432285e" value="Unique identifier of revolver in Benaki Museum" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="465" y="383" width="322" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4f193ac3" value="UniqueIdentifierOfLetterInBenakiMuseum
+(crm:E42_Identifier)" style="shape=rectangle;rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="860" y="83" width="266" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n63bc39a0" value="Unique identifier of letter in Benaki Museum" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="1253" y="66" width="308" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5a85b445" value="10" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="63" y="373" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="n21e23c4f" value="9" style="shape=ellipse;rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#c17a00;" parent="1" vertex="1">
+          <mxGeometry x="1049" y="40" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2d816d54" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n3b5d58ec" target="nf4e07e9a">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9e5e33e0" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n3b5d58ec" target="n8909816b">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6e9c8315" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n15cb8588">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e92802db1" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n2c3b1bf5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ee1e6ad4f" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="ne05354d6" target="nf2889887">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e365d463e" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="ne05354d6" target="ne85bd884">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13b71caf" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n0cc0affa" target="n2657b31c">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6720c67b" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n0cc0affa" target="n113566ec">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e224adbcb" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n8fd29f44" target="n802aba3d">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e530258b0" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n8fd29f44" target="nf1e2f2a4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4bfec0b5" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="nb4ffcef5" target="nac564b43">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eb61be721" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="nb4ffcef5" target="n9369470b">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ee15f4524" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="ne3395ca4" target="nad1e54b9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1b5505aa" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="ne3395ca4" target="nc1411b63">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="eb7f71fde" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n74ed1a43" target="ndd750569">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e19224ab7" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n74ed1a43" target="n0432285e">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e39e32aca" value="type" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n4f193ac3" target="ndd750569">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ea7499789" value="label" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n4f193ac3" target="n63bc39a0">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ec4e0930d" value="crm:P100_was_death_of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n3b5d58ec">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e17dee7f3" value="crm:P11_had_participant" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n3b5d58ec">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e02782e1e" value="crm:P7_took_place_at" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="ne05354d6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6ed815e7" value="crm:P175_starts_before_or_with_the_start_of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n0cc0affa" target="n6e2da5a1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e82cfef74" value="crm:P184_ends_before_or_with_the_end_of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n0cc0affa">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="effd28845" value="crm:P12_occurred_in_the_presence_of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n6e2da5a1" target="n8fd29f44">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ebfcab413" value="crm:P129_is_about" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="nb4ffcef5" target="n6e2da5a1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="ed519bdc9" value="crm:P48_has_preferred_identifier" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n8fd29f44" target="n74ed1a43">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1f5b8a00" value="P190_has_symbolic_content" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n74ed1a43" target="n5a85b445">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e16593393" value="crm:P48_has_preferred_identifier" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="nb4ffcef5" target="n4f193ac3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9272285c" value="P190_has_symbolic_content" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" parent="1" edge="1" source="n4f193ac3" target="n21e23c4f">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

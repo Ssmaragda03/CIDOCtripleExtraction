@@ -26,6 +26,16 @@ public class CIDOC_Validator {
     private static final String CIDOC_ENDPOINT = "http://93.115.20.167:8890/sparql";
     private static final List<String> tripleAnnotations = new ArrayList<>();
 
+    private static void resetState() {
+        correct = 0;
+        correctDomainOnly = 0;
+        correctRangeOnly = 0;
+        bothErrors = 0;
+        tCount = 0;
+        tripleAnnotations.clear();
+        superclasses.clear();
+    }
+
     // ------------------------------------------------------------
     // 1. LOAD SUPERCLASSES (Python equivalent)
     // ------------------------------------------------------------
@@ -140,6 +150,25 @@ public class CIDOC_Validator {
                 }
 
                 if (domain == null && range == null) {
+                    String json = String.format(
+                            "{\n"
+                            + "  \"subject\": \"%s\",\n"
+                            + "  \"predicate\": \"%s\",\n"
+                            + "  \"object\": \"%s\",\n"
+                            + "  \"domain_correct\": false,\n"
+                            + "  \"range_correct\": false,\n"
+                            + "  \"valid\": false,\n"
+                            + "  \"errors\": [\"property_not_found\"]\n"
+                            + "}",
+                            escapeJson(s),
+                            escapeJson(p),
+                            escapeJson(o)
+                    );
+
+                    tripleAnnotations.add(json);
+                    bothErrors++;
+                    tCount++;
+
                     System.err.println("❌ Property not found: " + p);
                     continue;
                 }
@@ -266,7 +295,7 @@ public class CIDOC_Validator {
     }
 
     public String validateConsistencyToJson(String file) {
-
+        resetState();
         loadSuperClasses();
         validateFile(file);
 

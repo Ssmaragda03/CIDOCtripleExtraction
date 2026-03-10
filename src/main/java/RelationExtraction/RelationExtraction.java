@@ -18,18 +18,18 @@ public class RelationExtraction {
         String triples = RDFClassPropertyExtractor.getconvertedTriples(entitiesFile);
         System.out.println(triples);
         if (method.equals("zero")) {
-            prompt = "For the text: " + text + "\n\nThese are the entities their class and label:\n"
+            prompt = "For the text: " + text + "\n\nThese are the entities their class and label:\n\n"
                     + triples + "\n\n Please by using CIDOC-CRM properties, please "
                     + "produce all the  relationships (including inferred ones) and then the triples of the text in .nt triples format by using the same URIs for the entities (no need to produce the rdf:type and rdfs:label again). I strictly want only the triples in .nt format";
-        }        else if (method.equals("predictions")) {
+        } else if (method.equals("predictions")) {
             String properties = RDFClassPropertyExtractor.getCandidateProperties(entitiesFile);
 
-            prompt = "For the text: " + text + " These are the entities their class and label:\n"
-                    + triples + "\n\nThese are the candidate properties (and their domain,range) for these entities\n"
+            prompt = "For the text: " + text + "\n\nThese are the entities their class and label:\n"
+                    + triples + "\n\nThese are the candidate properties (and their domain,range) for these entities\n\n"
                     + properties + "\n\nPlease produce  all the  relationships  (including inferred ones from the text) and then the triples of the text  between the entities in .nt triples format by using the same URIs for the entities (no need to produce the rdf:type and rdfs:label again, also please i want only the triples and no further explanation) I strictly want only the triples in .nt forma";
 
         } else if (method.equals("properties")) {
-            prompt = "For the text: " + text + "\n\nThese are the entities their class and label:\n"
+            prompt = "For the text: " + text + "\n\nThese are the entities their class and label:\n\n"
                     + triples + "\n"
                     + Resources.promptPropertiesOnly.replace("\\n", "\n") + "\nPlease produce  all the  relationships  (including inferred ones from the text) and then the triples of the text  between the entities in .nt triples format by using the same URIs for the entities (no need to produce the rdf:type and rdfs:label again, also please i want only the triples and no further explanation) I strictly want only the triples in .nt forma";
 

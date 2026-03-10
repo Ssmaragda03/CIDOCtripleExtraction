@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mycompany</groupId>
-    <artifactId>RDLAnnotationTool</artifactId>
+    <artifactId>CIDOCtripleExtraction</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>RDLAnnotationTool</name>
+    <name>CIDOCtripleExtraction</name>
     
     <properties>
     <maven.compiler.source>11</maven.compiler.source>

@@ -31,7 +31,6 @@ public class RDFClassPropertyExtractor {
     public static String getCandidateProperties(String filePath) throws Exception {
 
         // --- Step 1: Load the RDF file ---
-        //String filePath = "C:\\Users\\micha\\OneDrive\\Υπολογιστής\\benchmark\\gpt_4_acropol.nt";
         Model model = ModelFactory.createDefaultModel();
         model.read(filePath, "N-TRIPLE");
 

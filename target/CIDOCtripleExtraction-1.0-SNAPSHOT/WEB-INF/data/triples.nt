@@ -1,0 +1,40 @@
+<http://www.ics.forth.gr/isl/Event_of_Konstantinos_Karyotakis_Suicide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E5_Event> .
+<http://www.ics.forth.gr/isl/Event_of_Konstantinos_Karyotakis_Suicide> <http://www.w3.org/2000/01/rdf-schema#label> "Event of Konstantinos Karyotakis's Suicide" .
+<http://www.ics.forth.gr/isl/Date_of_Suicide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E52_Time-Span> .
+<http://www.ics.forth.gr/isl/Date_of_Suicide> <http://www.w3.org/2000/01/rdf-schema#label> "Date of Suicide" .
+<http://www.ics.forth.gr/isl/Konstantinos_Karyotakis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E21_Person> .
+<http://www.ics.forth.gr/isl/Konstantinos_Karyotakis> <http://www.w3.org/2000/01/rdf-schema#label> "Konstantinos Karyotakis" .
+<http://www.ics.forth.gr/isl/Place_of_Suicide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E53_Place> .
+<http://www.ics.forth.gr/isl/Place_of_Suicide> <http://www.w3.org/2000/01/rdf-schema#label> "Place of Suicide" .
+<http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object> .
+<http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> <http://www.w3.org/2000/01/rdf-schema#label> "Revolver Used in Suicide" .
+<http://www.ics.forth.gr/isl/Suicide_Note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E31_Document> .
+<http://www.ics.forth.gr/isl/Suicide_Note> <http://www.w3.org/2000/01/rdf-schema#label> "Suicide Note" .
+<http://www.ics.forth.gr/isl/Benaki_Museum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding> .
+<http://www.ics.forth.gr/isl/Benaki_Museum> <http://www.w3.org/2000/01/rdf-schema#label> "Benaki Museum" .
+<http://www.ics.forth.gr/isl/Identifier_for_Revolver> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+<http://www.ics.forth.gr/isl/Identifier_for_Revolver> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier for Revolver" .
+<http://www.ics.forth.gr/isl/Identifier_for_Letter> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+<http://www.ics.forth.gr/isl/Identifier_for_Letter> <http://www.w3.org/2000/01/rdf-schema#label> "Identifier for Letter" .
+<http://www.ics.forth.gr/isl/Death_of_Konstantinos_Karyotakis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E69_Death> .
+<http://www.ics.forth.gr/isl/Death_of_Konstantinos_Karyotakis> <http://www.w3.org/2000/01/rdf-schema#label> "Death of Konstantinos Karyotakis" .
+<http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Revolver> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> .
+<http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Revolver> <http://www.w3.org/2000/01/rdf-schema#label> "Beginning of Existence of Revolver" .
+<http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Suicide_Note> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.cidoc-crm.org/cidoc-crm/E63_Beginning_of_Existence> .
+<http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Suicide_Note> <http://www.w3.org/2000/01/rdf-schema#label> "Beginning of Existence of Suicide Note" .
+<http://www.ics.forth.gr/isl/Event_of_Konstantinos_Karyotakis_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span> <http://www.ics.forth.gr/isl/Date_of_Suicide> .
+<http://www.ics.forth.gr/isl/Event_of_Konstantinos_Karyotakis_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P12_has_member✎> <http://www.ics.forth.gr/isl/Konstantinos_Karyotakis> .
+<http://www.ics.forth.gr/isl/Event_of_Konstantinos_Karyotakis_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P7_took_place_at> <http://www.ics.forth.gr/isl/Place_of_Suicide> .
+<http://www.ics.forth.gr/isl/Death_of_Konstantinos_Karyotakis> <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> <http://www.ics.forth.gr/isl/Konstantinos_Karyotakis> .
+<http://www.ics.forth.gr/isl/Death_of_Konstantinos_Karyotakis> <http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span> <http://www.ics.forth.gr/isl/Date_of_Suicide> .
+<http://www.ics.forth.gr/isl/Place_of_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P3_has_note> <http://www.ics.forth.gr/isl/Konstantinos_Karyotakis> .
+<http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> <http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object> .
+<http://www.ics.forth.gr/isl/Suicide_Note> <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> <http://www.cidoc-crm.org/cidoc-crm/E31_Document> .
+<http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> <http://www.ics.forth.gr/isl/Identifier_for_Revolver> .
+<http://www.ics.forth.gr/isl/Suicide_Note> <http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by> <http://www.ics.forth.gr/isl/Identifier_for_Letter> .
+<http://www.ics.forth.gr/isl/Identifier_for_Revolver> <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+<http://www.ics.forth.gr/isl/Identifier_for_Letter> <http://www.cidoc-crm.org/cidoc-crm/P2_has_type> <http://www.cidoc-crm.org/cidoc-crm/E42_Identifier> .
+<http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> <http://www.cidoc-crm.org/cidoc-crm/P48_has_predecessor✎> <http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Revolver> .
+<http://www.ics.forth.gr/isl/Suicide_Note> <http://www.cidoc-crm.org/cidoc-crm/P48_has_predecessor✎> <http://www.ics.forth.gr/isl/Beginning_of_Existence_of_Suicide_Note> .
+<http://www.ics.forth.gr/isl/Benaki_Museum> <http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of> <http://www.ics.forth.gr/isl/Revolver_Used_in_Suicide> .
+<http://www.ics.forth.gr/isl/Benaki_Museum> <http://www.cidoc-crm.org/cidoc-crm/P46_is_composed_of> <http://www.ics.forth.gr/isl/Suicide_Note> .

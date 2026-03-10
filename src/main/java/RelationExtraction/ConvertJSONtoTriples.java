@@ -56,7 +56,7 @@ public class ConvertJSONtoTriples {
                         .append("> <")
                         .append(RDFS_LABEL)
                         .append("> \"")
-                        .append(escapeLiteral(label))
+                        .append(escapeLiteral(normalizeLiteral(label, prefixes)))
                         .append("\" .\n");
             }
         }
@@ -105,5 +105,26 @@ public class ConvertJSONtoTriples {
 
     private static String escapeLiteral(String text) {
         return text.replace("\\", "\\\\").replace("\"", "\\\"");
+    }
+
+    private String normalizeLiteral(String text, Map<String, String> prefixes) {
+        if (text == null) {
+            return null;
+        }
+
+        text = text.trim();
+
+        int colonIndex = text.indexOf(':');
+        if (colonIndex <= 0) {
+            return text;
+        }
+
+        String possiblePrefix = text.substring(0, colonIndex).trim();
+
+        if (prefixes != null && prefixes.containsKey(possiblePrefix)) {
+            return text;
+        }
+
+        return text.replace(":", "");
     }
 }

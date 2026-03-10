@@ -1,4 +1,4 @@
-# RDLAnnotationTool
+# CIDOCtripleExtraction
 
 This project was developed and is intended to run in **NetBeans IDE 12.1** using **Java JDK 11**.
 
