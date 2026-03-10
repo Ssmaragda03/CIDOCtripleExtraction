@@ -862,34 +862,14 @@ function turnPredicateIntoSelect(tdP, currentValue = "", tdO = null) {
   );
 
   const v = (sel.value || "").trim();
-
-  function updatePredicateSelectStyle() {
-    const v = (sel.value || "").trim();
-
-    if (
-      v.startsWith("rdf:") ||
-      v.startsWith("rdfs:") ||
-      v.startsWith("crm:")
-    ) {
-      styleSelectAsLink(sel);
-    } else {
-      sel.style.textDecoration = "";
-      sel.style.cursor = "";
-      sel.title = "";
-    }
-  }
-
-  updatePredicateSelectStyle();
-  sel.addEventListener("change", updatePredicateSelectStyle);
-
-
-
-
+  
   sel.addEventListener("change", () => {
     if (tdO) {
       const currentObjectValue = getCellValue(tdO);
       renderObjectCell(tdO, sel.value, currentObjectValue);
     }
+    styleSelectAsLink(sel);
+    attachOpenLinkOnDblClick(sel);
     validateRdfTableWarnings();
   });
 
