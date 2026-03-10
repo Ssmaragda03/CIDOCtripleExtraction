@@ -308,6 +308,7 @@ function isAllowedPredicate(value) {
 function makePredicateSelect(current = "") {
   const sel = document.createElement("select");
   sel.className = "crm-select";
+  
 
   const empty = document.createElement("option");
   empty.value = "";
@@ -335,7 +336,7 @@ function makePredicateSelect(current = "") {
   } else {
     empty.selected = true;
   }
-
+  
   return sel;
 }
 
@@ -739,12 +740,14 @@ function styleSelectAsLink(sel) {
   sel.title = "Double-click to open link";
 }
 
-function attachSelectOpenLinkOnDblClick(sel) {
-  sel.addEventListener("dblclick", (e) => {
+function attachOpenLinkOnDblClick(el) {
+  el.addEventListener("dblclick", (e) => {
     e.preventDefault();
     e.stopPropagation();
 
-    const url = expandPrefixedUrl(sel.value);
+    const rawValue = "value" in el ? el.value : (el.textContent || "").trim();
+    const url = expandPrefixedUrl(rawValue);
+
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");
     }
@@ -761,20 +764,9 @@ function addRdfRow(triple = {}) {
   const tdS = document.createElement("td");
   tdS.className = "rdf-col-subject";
   tdS.contentEditable = "true";
-  tdS.style.textDecoration = "underline";
-  tdS.style.cursor = "pointer";
-  tdS.title = "Double-click to open link";
+  styleSelectAsLink(tdS);
   tdS.textContent = triple.subject || "";
-
-  tdS.addEventListener("dblclick", function () {
-    let url = tdS.textContent.trim();
-    if (url.startsWith("forth:")) {
-      url = "http://www.ics.forth.gr/isl/" + url.slice("forth:".length);
-    }
-    if (url.startsWith("http://") || url.startsWith("https://")) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  });
+  attachOpenLinkOnDblClick(tdS);
 
   // OBJECT
   const tdO = document.createElement("td");
@@ -789,8 +781,9 @@ function addRdfRow(triple = {}) {
 
   if (!invalidPredicate) {
     const selP = makePredicateSelect(predicateValue);
-
-    attachSelectOpenLinkOnDblClick(selP);
+    
+    styleSelectAsLink(selP);
+    attachOpenLinkOnDblClick(selP);
 
     selP.addEventListener("change", () => {
       const currentObjectValue = getCellValue(tdO);
@@ -808,25 +801,7 @@ function addRdfRow(triple = {}) {
     valueSpan.className = "predicate-inline-text";
     valueSpan.contentEditable = "true";
     valueSpan.textContent = predicateValue;
-    valueSpan.style.textDecoration = "underline";
-    valueSpan.style.cursor = "pointer";
-    valueSpan.title = "Double-click to open link";
-
-    valueSpan.addEventListener("dblclick", function () {
-      let url = valueSpan.textContent.trim();
-      if (url.startsWith("crm:")) {
-        url = "http://www.cidoc-crm.org/cidoc-crm/" + url.slice("crm:".length);
-      }
-      if (url.startsWith("rdf:")) {
-        url = "http://www.w3.org/1999/02/22-rdf-syntax-ns#" + url.slice("rdf:".length);
-      }
-      if (url.startsWith("rdfs:")) {
-        url = "http://www.w3.org/2000/01/rdf-schema#" + url.slice("rdfs:".length);
-      }
-      if (url.startsWith("http://") || url.startsWith("https://")) {
-        window.open(url, "_blank", "noopener,noreferrer");
-      }
-    });
+    
 
     const editBtn = document.createElement("button");
     editBtn.className = "icon-btn predicate-edit-btn";
@@ -836,7 +811,7 @@ function addRdfRow(triple = {}) {
 
     editBtn.addEventListener("click", () => {
       const currentValue = (valueSpan.textContent || "").trim();
-      turnPredicateIntoSelect(tdP, currentValue);
+      turnPredicateIntoSelect(tdP, currentValue, tdO);
     });
 
     wrap.append(valueSpan, editBtn);
@@ -871,7 +846,7 @@ function addRdfRow(triple = {}) {
   tbody.appendChild(tr);
 }
 
-function turnPredicateIntoSelect(tdP, currentValue = "") {
+function turnPredicateIntoSelect(tdP, currentValue = "", tdO = null) {
   if (!tdP) return;
 
   tdP.innerHTML = "";
@@ -886,9 +861,37 @@ function turnPredicateIntoSelect(tdP, currentValue = "") {
     isAllowedPredicate(currentValue) ? currentValue : ""
   );
 
-  attachSelectOpenLinkOnDblClick(sel);
+  const v = (sel.value || "").trim();
 
-  sel.addEventListener("change", validateRdfTableWarnings);
+  function updatePredicateSelectStyle() {
+    const v = (sel.value || "").trim();
+
+    if (
+      v.startsWith("rdf:") ||
+      v.startsWith("rdfs:") ||
+      v.startsWith("crm:")
+    ) {
+      styleSelectAsLink(sel);
+    } else {
+      sel.style.textDecoration = "";
+      sel.style.cursor = "";
+      sel.title = "";
+    }
+  }
+
+  updatePredicateSelectStyle();
+  sel.addEventListener("change", updatePredicateSelectStyle);
+
+
+
+
+  sel.addEventListener("change", () => {
+    if (tdO) {
+      const currentObjectValue = getCellValue(tdO);
+      renderObjectCell(tdO, sel.value, currentObjectValue);
+    }
+    validateRdfTableWarnings();
+  });
 
   tdP.appendChild(sel);
 }
@@ -905,10 +908,8 @@ function renderObjectCell(tdO, predicateValue, objectValue = "") {
 
   if (isRdfType) {
     const selO = makeCrmClassSelect(objectValue);
-    attachSelectOpenLinkOnDblClick(selO);
-    tdO.contentEditable = "true";
-
-
+    styleSelectAsLink(selO);
+    attachOpenLinkOnDblClick(selO);
     selO.addEventListener("change", validateRdfTableWarnings);
 
     tdO.appendChild(selO);
@@ -918,8 +919,7 @@ function renderObjectCell(tdO, predicateValue, objectValue = "") {
   if (isCrmProperty) {
     const wrap = makeObjectInputWithTypes(objectValue);
     const input = wrap.querySelector("input");
-    tdO.contentEditable = "false";
-
+      tdO.contentEditable = "false";
 
     if (input) {
       input.addEventListener("input", validateRdfTableWarnings);
@@ -929,56 +929,10 @@ function renderObjectCell(tdO, predicateValue, objectValue = "") {
     tdO.appendChild(wrap);
     return;
   }
-
+  
+  tdO.contentEditable = "true";
   tdO.textContent = objectValue || "";
 
-  tdO.addEventListener("dblclick", function () {
-    let url = tdO.textContent.trim();
-    if (url.startsWith("crm:")) {
-      url = "http://www.cidoc-crm.org/cidoc-crm/" + url.slice("crm:".length);
-    }
-    if (url.startsWith("forth:")) {
-      url = "http://www.ics.forth.gr/isl/" + url.slice("forth:".length);
-    }
-    if (url.startsWith("rdf:")) {
-      url = "http://www.w3.org/1999/02/22-rdf-syntax-ns#" + url.slice("rdf:".length);
-    }
-    if (url.startsWith("rdfs:")) {
-      url = "http://www.w3.org/2000/01/rdf-schema#" + url.slice("rdfs:".length);
-    }
-    if (url.startsWith("http://") || url.startsWith("https://")) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  });
-
-  const otxt = tdO.textContent.trim();
-  if (isKnownPrefixedValue(otxt)) {
-    tdO.style.textDecoration = "underline";
-    tdO.style.cursor = "pointer";
-    tdO.title = "Double-click to open link";
-  } else {
-    tdO.style.textDecoration = "";
-    tdO.style.cursor = "";
-    tdO.title = "";
-  }
-}
-
-function isKnownPrefixedValue(value) {
-  if (!value) return false;
-
-  const v = value.trim();
-
-  if (v.startsWith("http://") || v.startsWith("https://")) {
-    return true;
-  }
-
-  const colonIndex = v.indexOf(":");
-  if (colonIndex <= 0) return false;
-
-  const prefix = v.slice(0, colonIndex);
-  const prefixes = getPrefixesFromUI();
-
-  return !!prefixes[prefix];
 }
 
 document.addEventListener("DOMContentLoaded", () => {
