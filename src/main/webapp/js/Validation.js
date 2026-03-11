@@ -3,6 +3,7 @@
 // validation, about and drawio 
 
 function validator() {
+  clearValidationHighlights();
   const btn = document.getElementById("update-settings");
   const statusEl = document.getElementById("validation-status");
 

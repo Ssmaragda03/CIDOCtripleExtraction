@@ -1147,6 +1147,34 @@ function addPrefix(){
 
   window.RDF_PREFIXES = getPrefixesFromUI();
   clearAddPrefixError();
+  refreshEntityRowsAfterPrefixAdd();
+}
+
+function refreshEntityRowsAfterPrefixAdd() {
+  const tbody = document.getElementById("entities-table-body");
+  if (!tbody) return;
+
+  const rows = tbody.querySelectorAll("tr");
+
+  rows.forEach(tr => {
+    const tdURI = tr.querySelector(".col-uri");
+    if (!tdURI) return;
+
+    const raw = (tdURI.textContent || "").trim();
+    if (!raw) return;
+
+    const hasPrefixForm = raw.includes(":");
+    if (!hasPrefixForm) return;
+
+    const prefixId = raw.split(":")[0];
+    const prefixInput = document.getElementById(`prefix-${prefixId}`);
+
+    if (prefixInput) {
+      markRowDirty(tr, true);
+    }
+  });
+
+  updateExecuteState();
 }
 
 // ===== prefixes =====
