@@ -56,7 +56,7 @@ public class EntityRecognition {
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json");
 
-        String fkey = "sk-51790517195e466e977b186229d6db38";
+        String fkey = ""; //add your key;
 
         con.setRequestProperty("Authorization", "Bearer " + fkey);
 
@@ -99,9 +99,9 @@ public class EntityRecognition {
     }
 
     private String url = "https://api.openai.com/v1/chat/completions";
-    String key_35 = "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";
-    String keymini = "sk-9uDH7tWGBYoJ1RiNANWLGEqDSkVnBSAncNTMqRIYvBT3BlbkFJtUMDmtWNwht62u0JDYtnL_ImXXMe-JMQoJ-2448FEA";
-    String key4 = "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";
+    String key_35 = ""; //add your key;
+    String keymini = ""; //add your key;
+    String key4 = ""; //add your key;
 
     /**
      * Calls gpt turbo version without caring about conversation history
