@@ -171,7 +171,7 @@ public class EntityRecognition {
     }
 
     public String runGemini(String currentPrompt) {
-        String key = "AIzaSyDc1ufAiQDHhoQkUQhDOUsCDfry00WoCYA";
+        String key = ""; //add your key
         Client client = Client.builder().apiKey(key).build();
 
         GenerateContentResponse response
