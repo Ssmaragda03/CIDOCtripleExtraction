@@ -867,7 +867,7 @@ function turnPredicateIntoSelect(tdP, currentValue = "", tdO = null) {
     if (tdO) {
       const currentObjectValue = getCellValue(tdO);
       renderObjectCell(tdO, sel.value, currentObjectValue);
-    }
+    } 
     styleSelectAsLink(sel);
     attachOpenLinkOnDblClick(sel);
     validateRdfTableWarnings();
@@ -1147,12 +1147,12 @@ function addPrefix(){
 
   window.RDF_PREFIXES = getPrefixesFromUI();
   clearAddPrefixError();
-  refreshEntityRowsAfterPrefixAdd();
+  refreshEntityRowsAfterPrefixAdd(prefixId);
 }
 
-function refreshEntityRowsAfterPrefixAdd() {
+function refreshEntityRowsAfterPrefixAdd(newPrefixId) {
   const tbody = document.getElementById("entities-table-body");
-  if (!tbody) return;
+  if (!tbody || !newPrefixId) return;
 
   const rows = tbody.querySelectorAll("tr");
 
@@ -1163,19 +1163,27 @@ function refreshEntityRowsAfterPrefixAdd() {
     const raw = (tdURI.textContent || "").trim();
     if (!raw) return;
 
-    const hasPrefixForm = raw.includes(":");
-    if (!hasPrefixForm) return;
+    // Ελέγχουμε αν το κείμενο ξεκινάει με το συγκεκριμένο prefix (π.χ. "crm:")
+    // Χρησιμοποιούμε startsWith για μεγαλύτερη ακρίβεια
+    if (raw.startsWith(newPrefixId + ":")) {
+      
+      // Βρίσκουμε το input του συγκεκριμένου prefix για επιβεβαίωση
+      const prefixInput = document.getElementById(`prefix-${newPrefixId}`);
 
-    const prefixId = raw.split(":")[0];
-    const prefixInput = document.getElementById(`prefix-${prefixId}`);
-
-    if (prefixInput) {
-      markRowDirty(tr, true);
+      if (prefixInput) {
+        // Μαρκάρουμε τη σειρά ως dirty μόνο αν ταιριάζει το prefix
+        markRowDirty(tr, true);
+        
+        // Προαιρετικά: Αν θέλεις να ανανεώσεις και το UI της συγκεκριμένης σειράς 
+        // ώστε να φανεί αμέσως η αλλαγή (αν έχεις τέτοια συνάρτηση)
+        // renderEntityRow(tr); 
+      }
     }
   });
 
   updateExecuteState();
 }
+
 
 // ===== prefixes =====
 
